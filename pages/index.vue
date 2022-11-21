@@ -1,12 +1,12 @@
 <template>
-    <h1>{{ movie }}</h1>
+    <MovieList :movies="movies" />
 </template>
 
 <script setup lang="ts">
 import { movieStore } from '@/store/movie'
 let store = movieStore()
 
-let movie = reactive(store.getMovies)
+let movies = reactive(store.getMovies)
 </script>
 
 <style>

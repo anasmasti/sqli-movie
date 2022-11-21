@@ -1,10 +1,10 @@
 <template>
-  <nav class="p-3 flex justify-between">
-    <div>
-        <span class="logo">SQLI</span><span>Movies</span>
+  <nav class="p-4 flex justify-between bg-black text-white">
+    <div class="text-xl">
+        <span class="logo mr-1">SQLI</span><span>Movies</span>
     </div>
     <div>
-      <NuxtLink to="/favorites">Fav</NuxtLink>
+      <NuxtLink to="/favorites"><i class="far fa-heart"></i></NuxtLink>
     </div>
   </nav>
 </template>
