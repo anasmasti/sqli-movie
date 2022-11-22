@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import IMovie from "@/models/IMovie";
 
-export const movieStore = defineStore("movie", {
+export const useMovieStore = defineStore("movie", {
   state: () => {
     const movies: IMovie[] = [
       {
@@ -62,10 +62,21 @@ export const movieStore = defineStore("movie", {
     ];
     return { movies };
   },
-  actions: {},
+  actions: {
+    editMovieById(id: number, favMovie: IMovie) {
+      this.movies.forEach((movie, index) => {
+        if (movie.id == id) {
+          this.movies[index] = favMovie;
+        }
+      });
+    },
+  },
   getters: {
     getMovies(): IMovie[] {
       return this.movies;
+    },
+    getFavMovies(): IMovie[] {
+      return this.movies.filter((movies) => movies.fav == true);
     },
     getMostPopularMovies(): IMovie[] {
       return this.movies.filter((movies) => movies.note > 4.5);

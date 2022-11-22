@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-wrap gap-3">
-    <Movie v-for="movie in movies" :key="movie.id" :movie="movie" />
+    <MovieList :movies="movies" :rendred="false" />
   </div>
 </template>
 
