@@ -7,9 +7,7 @@
         </div>
         <div class="mb-6 flex flex-col py-5">
             <AppTitle title="All" />
-            <div class="mt-5">
-                <MovieList :movies="movies" :rendred="true" />
-            </div>
+            <MovieList :movies="movies" :rendred="true" />
         </div>
     </section>
 </template>

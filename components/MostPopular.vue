@@ -1,14 +1,12 @@
 <template>
-  <div class="flex flex-wrap gap-3">
-    <MovieList :movies="movies" :rendred="false" />
-  </div>
+  <MovieList :movies="movies" :rendred="false" />
 </template>
 
 <script setup lang="ts">
 import IMovie from '@/models/IMovie'
 
 type movieListProps = {
-    movies: IMovie[]
+  movies: IMovie[]
 }
 const { movies } = defineProps<movieListProps>()
 </script>
