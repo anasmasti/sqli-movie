@@ -26,4 +26,10 @@ const route = useRoute()
 const { id } = route.params
 
 const movie = ref(store.getMovieById(id))
+
+const addToFav = () => {
+    let favMovie = { ...movie }
+    favMovie.fav = true
+    store.editMovieById(favMovie.id, favMovie)
+}
 </script>
