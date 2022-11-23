@@ -75,6 +75,11 @@ export const useMovieStore = defineStore("movie", {
     getMovies(): IMovie[] {
       return this.movies;
     },
+    getMovieById(): (movieId: number) => IMovie | undefined {
+      return (movieId: number): IMovie | undefined => {
+        return this.movies.find((movie) => movie.id == movieId);
+      };
+    },
     getFavMovies(): IMovie[] {
       return this.movies.filter((movies) => movies.fav == true);
     },

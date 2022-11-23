@@ -1,4 +1,5 @@
 <template>
+     <NuxtLink :to="`/${movie.id}`">
     <div class="py-3 sm:max-w-xl sm:mx-auto">
         <div class="bg-white shadow-lg border-gray-100 max-h-80	 border sm:rounded-3xl p-8 flex space-x-8">
             <div class="h-48 overflow-visible w-1/2">
@@ -25,6 +26,7 @@
             </div>
         </div>
     </div>
+</NuxtLink>
 </template>
 
 <script setup lang="ts">
