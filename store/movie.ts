@@ -70,6 +70,13 @@ export const useMovieStore = defineStore("movie", {
         }
       });
     },
+    editMovieNote(id: number, favMovie: IMovie) {
+      this.movies.forEach((movie, index) => {
+        if (movie.id == id) {
+          Object.assign(this.movies[index], favMovie);
+        }
+      });
+    },
   },
   getters: {
     getMovies(): IMovie[] {
