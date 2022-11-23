@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-wrap gap-5 lg:gap-8 justify-start items-start">
+    <div class="flex flex-wrap gap-5 lg:gap-10 justify-start items-start">
         <Movie v-for="movie in movies" :key="movie.id" :movie="movie" />
     </div>
 </template>

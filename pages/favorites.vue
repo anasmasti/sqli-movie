@@ -2,7 +2,8 @@
     <section class="p-6">
         <AppTitle title="Favorite Movies" />
         <div class="mt-5">
-            <MovieList :movies="favMovies" />
+            <MovieList v-if="favMovies.length" :movies="favMovies" />
+        <div v-else class="text-gray-400">There's no movie in your favorite list.</div>
         </div>
     </section>
 </template>
