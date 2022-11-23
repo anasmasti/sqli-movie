@@ -1,5 +1,5 @@
 <template>
-  <nav class="p-4 flex justify-between bg-black text-white">
+  <nav class="p-4 flex items-center justify-between bg-black text-white">
     <div class="text-xl">
       <NuxtLink to="/">
         <span class="logo mr-1">SQLI</span><span>Movies</span>
