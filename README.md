@@ -1,2 +1,2 @@
-# Nuxt 3 (Composition API) + TypeScript + Pinia
+### Nuxt 3 (Composition API) + TypeScript + Pinia
 
