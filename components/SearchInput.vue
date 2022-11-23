@@ -1,5 +1,5 @@
 <template>
-    <input v-model="inputValue" @change="getInputValue" type="text" class="bg-gray-500 rounded-lg p-1 px-3"
+    <input v-model="inputValue" @change="getInputValue" type="text" class="bg-gray-500 rounded-l-lg p-1 px-3"
         placeholder="Search..">
 </template>
 
