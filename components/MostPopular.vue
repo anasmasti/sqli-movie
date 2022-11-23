@@ -1,5 +1,5 @@
 <template>
-  <MovieList :movies="movies" :rendred="false" />
+  <MovieList :movies="movies" />
 </template>
 
 <script setup lang="ts">

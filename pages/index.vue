@@ -3,11 +3,11 @@
         <AppJumbotron :movie="jumbotronMovie" />
         <div class="mb-6 flex flex-col py-5">
             <AppTitle title="Most Popular" />
-            <MostPopular :movies="mostPopularMovies" :rendred="false" />
+            <MostPopular :movies="mostPopularMovies" />
         </div>
         <div class="mb-6 flex flex-col py-5">
             <AppTitle title="All" />
-            <MovieList :movies="movies" :rendred="true" />
+            <MovieList :movies="movies" />
         </div>
     </section>
 </template>
@@ -16,9 +16,10 @@
 import { useMovieStore } from '@/store/movie'
 const store = useMovieStore()
 
-let movies = ref(store.getMovies)
-let mostPopularMovies = ref(store.getMostPopularMovies)
-let jumbotronMovie = ref(store.getJumbotronMovie!)
+let movies = store.getMovies
+let mostPopularMovies = store.getMostPopularMovies
+let jumbotronMovie = store.getJumbotronMovie!
+
 </script>
 
 <style>

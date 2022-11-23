@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-wrap gap-5 lg:gap-8 justify-start items-start">
-        <Movie v-for="movie in movies" :key="movie.id" :movie="movie" :rendred="rendred" />
+        <Movie v-for="movie in movies" :key="movie.id" :movie="movie" />
     </div>
 </template>
 
@@ -8,8 +8,7 @@
 import IMovie from '@/models/IMovie'
 
 type movieListProps = {
-    movies: IMovie[],
-    rendred: boolean
+    movies: IMovie[]
 }
 const { movies } = defineProps<movieListProps>()
 </script>

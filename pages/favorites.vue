@@ -2,7 +2,7 @@
     <section class="p-6">
         <AppTitle title="Favorite Movies" />
         <div class="mt-5">
-            <MovieList :movies="favMovies" :rendred="false" />
+            <MovieList :movies="favMovies" />
         </div>
     </section>
 </template>

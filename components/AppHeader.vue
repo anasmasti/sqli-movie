@@ -5,16 +5,21 @@
         <span class="logo mr-1">SQLI</span><span>Movies</span>
       </NuxtLink>
     </div>
+    <SearchSection />
     <div>
-      <NuxtLink to="/favorites"><i class="far fa-heart"></i></NuxtLink>
+      <NuxtLink to="/favorites" class="flex items-centers justify-center gap-1">
+        <span v-text="favMoviesCount"></span>
+        <span><i class="far fa-heart"></i></span>
+      </NuxtLink>
     </div>
   </nav>
 </template>
 
-<script>
-export default {
+<script setup lang="ts">
+import { useMovieStore } from '@/store/movie'
 
-}
+const store = useMovieStore()
+const favMoviesCount = store.getFavMoviesCount
 </script>
 
 <style>

@@ -6,7 +6,7 @@
       <div class="flex items-center gap-3">
         <div class="bg-yellow-400 font-bold rounded-xl p-2 text-xs">{{ movie.note }}/5</div>
         <div>
-          <a @click="addToFav" class="cursor-pointer">
+          <a @click="addToFav(movie.id)" class="cursor-pointer">
             <i :class="` ${movie.fav ? 'fas' : 'far'}  fa-heart text-red-400`"></i>
           </a>
         </div>
@@ -17,7 +17,7 @@
   </article>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useMovieStore } from '@/store/movie'
 
 const store = useMovieStore()
@@ -25,11 +25,10 @@ const route = useRoute()
 
 const { id } = route.params
 
-const movie = ref(store.getMovieById(id))
+const movie = store.getMovieById(+id)!
 
-const addToFav = () => {
-    let favMovie = { ...movie }
-    favMovie.fav = true
-    store.editMovieById(favMovie.id, favMovie)
+const addToFav = (id: number) => {
+  movie.fav = !movie.fav
+  store.editMovieById(id, movie)
 }
 </script>

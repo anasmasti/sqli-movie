@@ -66,7 +66,7 @@ export const useMovieStore = defineStore("movie", {
     editMovieById(id: number, favMovie: IMovie) {
       this.movies.forEach((movie, index) => {
         if (movie.id == id) {
-          this.movies[index] = favMovie;
+          Object.assign(this.movies[index], favMovie);
         }
       });
     },
@@ -80,6 +80,17 @@ export const useMovieStore = defineStore("movie", {
         return this.movies.find((movie) => movie.id == movieId);
       };
     },
+    getMoviesByTitle(): (movieTitle: string) => IMovie[] | undefined {
+      return (movieTitle: string): IMovie[] | undefined => {
+        if (movieTitle != "") {
+          return this.movies.filter((movies) =>
+            movies.title.toLowerCase().match(movieTitle)
+          );
+        } else {
+          return [];
+        }
+      };
+    },
     getFavMovies(): IMovie[] {
       return this.movies.filter((movies) => movies.fav == true);
     },
@@ -88,6 +99,10 @@ export const useMovieStore = defineStore("movie", {
     },
     getJumbotronMovie(): IMovie | undefined {
       return this.movies.find((movie) => movie.title == "Avengers");
+    },
+    getFavMoviesCount(): number {
+      let favMovies = this.movies.filter((movies) => movies.fav == true);
+      return favMovies.length;
     },
   },
 });
